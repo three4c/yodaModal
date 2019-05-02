@@ -1,1 +1,1 @@
-# npmScript--test
+# npmScript-test
