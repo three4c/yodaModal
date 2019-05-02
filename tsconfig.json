@@ -2,11 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "outDir": "./public/js",
+    "outDir": "./docs/js",
     "strict": true,
     "esModuleInterop": true
   },
   "include": [
-    "./build/ts/**/*.ts"
+    "./src/ts/**/*.ts"
   ]
 }
