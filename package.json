@@ -6,13 +6,13 @@
   "scripts": {
     "build:sass": "node-sass ./src/sass --output ./docs/css --output-style compressed",
     "build:pug": "pug ./src/pug --out ./docs/ --pretty",
-    "build:ts"  : "tsc",
+    "build:ts": "tsc",
     "watch:sass": "node-sass ./src/sass --output ./docs/css --watch --output-style expanded",
     "watch:pug": "pug ./src/pug --out ./docs/ --watch --pretty",
-    "watch:ts"  : "tsc -w",
+    "watch:ts": "tsc -w",
     "watch:sync": "browser-sync start --server --serveStatic ./docs/ --files=\"./docs/**/*\"",
     "build": "npm-run-all -p build:*",
-    "watch": "npm-run-all -p watch:*"
+    "start": "npm-run-all -p watch:*"
   },
   "repository": {
     "type": "git",
@@ -31,5 +31,8 @@
     "pug": "^2.0.3",
     "pug-cli": "^1.0.0-alpha6",
     "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "reset-css": "^4.0.1"
   }
 }
