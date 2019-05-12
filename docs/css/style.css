@@ -2,6 +2,7 @@
    v4.0 | 20180602
    License: none (public domain)
 */
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,30 +58,105 @@ table {
   border-spacing: 0;
 }
 
-.container {
-  width: 100vw;
-  height: 100vh;
-}
-
-.container--inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+html, body {
   height: 100%;
 }
 
-.container--inner__box {
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  display: none;
+}
+
+input:checked + .modal {
+  animation: fadeIn .8s ease-in-out forwards;
+  z-index: 999;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 24px #bbb;
+  opacity: 0;
+  width: 480px;
+  height: 560px;
+}
+
+.modal--inner {
+  margin: 64px;
+}
+
+.modal--inner__img img {
+  border-radius: 80px;
+  width: 160px;
+  height: 160px;
+}
+
+.modal--inner__text {
+  margin-top: 80px;
+}
+
+.modal--inner__text .name p {
+  color: #333;
+  font-family: yu-mincho-5go-kana;
+  font-size: 24px;
+}
+
+.modal--inner__text .description {
+  margin-top: 40px;
+}
+
+.modal--inner__text .description p {
+  font-size: 14px;
+  font-weight: lighter;
+  text-align: justify;
+  letter-spacing: 1.4px;
+  line-height: 1.8;
+}
+
+.modal--inner__text label .closeButton {
+  cursor: pointer;
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #800080;
+  box-shadow: 0 0 24px #bbb;
+}
+
+.modal--inner__text label .closeButton p {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
   position: relative;
   animation: moveCircle .8s ease-in-out infinite alternate;
   background: #efefef;
   border-radius: 90px;
   width: 180px;
   height: 180px;
+  transition: all 1s;
 }
 
-.container--inner__box .box {
-  cursor: pointer;
+.container--inner {
   position: absolute;
   top: 0;
   left: 0;
@@ -93,16 +169,16 @@ table {
   overflow: hidden;
 }
 
-.container--inner__box .box .imgBox {
+.container--inner__img {
   transition: all .5s ease-in-out;
 }
 
-.container--inner__box .box .imgBox img {
+.container--inner__img img {
   width: 100%;
   height: 100%;
 }
 
-.container--inner__box .box .textBox {
+.container--inner__text {
   opacity: 0;
   position: absolute;
   top: 0;
@@ -115,38 +191,22 @@ table {
   transition: all .5s ease-in-out;
 }
 
-.container--inner__box .box .textBox p {
+.container--inner__text p {
   color: #fff;
   font-weight: bold;
   letter-spacing: 4px;
 }
 
-.container--inner__box .box .textBox p span {
-  animation: blur 1s ease-in-out infinite;
+.container--inner label {
+  cursor: pointer;
 }
 
-.container--inner__box .box .textBox p span:nth-child(1) {
-  animation-delay: .1s;
-}
-
-.container--inner__box .box .textBox p span:nth-child(2) {
-  animation-delay: .2s;
-}
-
-.container--inner__box .box .textBox p span:nth-child(3) {
-  animation-delay: .3s;
-}
-
-.container--inner__box .box .textBox p span:nth-child(4) {
-  animation-delay: .4s;
-}
-
-.container--inner__box .box:hover > .imgBox {
+.container--inner label:hover > .container--inner__img {
   transform: scale(1.2, 1.2);
   filter: blur(4px) brightness(40%);
 }
 
-.container--inner__box .box:hover > .textBox {
+.container--inner label:hover > .container--inner__text {
   opacity: 1;
 }
 
@@ -162,7 +222,7 @@ table {
   }
 }
 
-@keyframes blur {
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }

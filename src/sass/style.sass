@@ -1,70 +1,122 @@
 @import ../../node_modules/reset-css/reset
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css)
 
-.container
-  width: 100vw
-  height: 100vh
+html, body
+  height: 100%
+
+body
+  font-family: 'Noto Sans JP', sans-serif
+  text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
+
+input
+  display: none
+  &:checked + .modal
+    animation: fadeIn .8s ease-in-out forwards
+    z-index: 999
+.modal
+  position: fixed
+  display: flex
+  align-items: center
+  background: #fff
+  border-radius: 8px
+  box-shadow: 0 0 24px #bbb
+  opacity: 0
+  width: 480px
+  height: 560px
   &--inner
-    display: flex
-    align-items: center
-    justify-content: center
-    width: 100%
-    height: 100%
-    &__box
-      position: relative
-      animation: moveCircle .8s ease-in-out infinite alternate
-      background: #efefef
-      border-radius: 90px
-      width: 180px
-      height: 180px
-      .box
-        cursor: pointer
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        margin: auto
+    margin: 64px
+    &__img
+      img
+        border-radius: 80px
         width: 160px
         height: 160px
-        border-radius: 80px
-        overflow: hidden
-        .imgBox
-          transition: all .5s ease-in-out
-          img
-            width: 100%
-            height: 100%
-        .textBox
-          opacity: 0
+    &__text
+      margin-top: 80px
+      .name
+        p
+          color: #333
+          font-family: yu-mincho-5go-kana
+          font-size: 24px
+      .description
+        margin-top: 40px
+        p
+          font-size: 14px
+          font-weight: lighter
+          text-align: justify
+          letter-spacing: 1.4px
+          line-height: 1.8
+      label
+        .closeButton
+          cursor: pointer
           position: absolute
-          top: 0
-          left: 0
-          width: 100%
-          height: 100%
-          display: flex
-          justify-content: center
-          align-items: center
-          transition: all .5s ease-in-out
+          right: -20px
+          bottom: -20px
+          width: 40px
+          height: 40px
+          border-radius: 20px
+          background: #800080
+          box-shadow: 0 0 24px #bbb
           p
             color: #fff
+            font-size: 16px
             font-weight: bold
-            letter-spacing: 4px
-            span
-              animation: blur 1s ease-in-out infinite
-              &:nth-child(1)
-                animation-delay: .1s
-              &:nth-child(2)
-                animation-delay: .2s
-              &:nth-child(3)
-                animation-delay: .3s
-              &:nth-child(4)
-                animation-delay: .4s
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
 
-        &:hover > .imgBox
-            transform: scale(1.2, 1.2)
-            filter: blur(4px) brightness(40%)
+.container
+  position: relative
+  animation: moveCircle .8s ease-in-out infinite alternate
+  background: #efefef
+  border-radius: 90px
+  width: 180px
+  height: 180px
+  transition: all 1s
+  &--inner
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    margin: auto
+    width: 160px
+    height: 160px
+    border-radius: 80px
+    overflow: hidden
+    &__img
+      transition: all .5s ease-in-out
+      img
+        width: 100%
+        height: 100%
+    &__text
+      opacity: 0
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      transition: all .5s ease-in-out
+      p
+        color: #fff
+        font-weight: bold
+        letter-spacing: 4px
 
-        &:hover > .textBox
-            opacity: 1
+    label
+      cursor: pointer
+      &:hover > .container--inner__img
+        transform: scale(1.2, 1.2)
+        filter: blur(4px) brightness(40%)
+
+      &:hover > .container--inner__text
+        opacity: 1
 
 @keyframes moveCircle
 	0%
@@ -75,7 +127,7 @@
     width: 220px
     height: 220px
 
-@keyframes blur
+@keyframes fadeIn
   0%
     opacity: 0
   100%

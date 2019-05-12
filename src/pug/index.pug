@@ -7,15 +7,25 @@ html(lang='ja')
     meta(name='viewport' content='width=device-width, initial-scale=1')
   
   body
+    input(type="checkbox" name="modalPop" id="pop01")
+    .modal
+      .modal--inner
+        .modal--inner__img
+          img(src="img/yoda_face.jpg")
+        //- label(for="pop01") 閉じる
+        .modal--inner__text
+          .name
+            p よだ ゆうき
+          .description
+            p 2000年5月5日生まれ。乃木坂46の3期生メンバーとしてグループに加入。18枚目シングル「逃げ水」で初の選抜入り。
+          label(for="pop01")
+            .closeButton
+              p ×
     .container
       .container--inner
-        .container--inner__box
-          .box
-            .imgBox
-              img(src="img/yoda_face.jpg")
-            .textBox
-              p
-                span O
-                span p
-                span e
-                span n
+        label(for="pop01")
+          .container--inner__img
+            img(src="img/yoda_face.jpg")
+          .container--inner__text
+                p Open
+    script(src='./js/typekit.js' type='text/javascript')
