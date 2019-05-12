@@ -11,23 +11,29 @@ body
   align-items: center
   justify-content: center
 
-input
+input[type="checkbox"]
   display: none
   &:checked + .modal
     animation: fadeIn .8s ease-in-out forwards
-    z-index: 999
+    display: flex
+  &:checked ~ .container
+    animation: fadeOut .8s ease-in-out forwards
 .modal
+  display: none
   position: fixed
-  display: flex
   align-items: center
   background: #fff
   border-radius: 8px
   box-shadow: 0 0 24px #bbb
-  opacity: 0
   width: 480px
   height: 560px
+  z-index: 999
+  @media screen and (max-width: 411px)
+    width: 85%
   &--inner
     margin: 64px
+    @media screen and (max-width: 411px)
+      margin: 40px
     &__img
       img
         border-radius: 80px
@@ -70,13 +76,11 @@ input
             justify-content: center
 
 .container
-  position: relative
   animation: moveCircle .8s ease-in-out infinite alternate
   background: #efefef
   border-radius: 90px
   width: 180px
   height: 180px
-  transition: all 1s
   &--inner
     position: absolute
     top: 0
@@ -132,3 +136,9 @@ input
     opacity: 0
   100%
     opacity: 1
+
+@keyframes fadeOut
+  0%
+    opacity: 1
+  100%
+    opacity: 0

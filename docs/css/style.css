@@ -70,29 +70,45 @@ body {
   justify-content: center;
 }
 
-input {
+input[type="checkbox"] {
   display: none;
 }
 
-input:checked + .modal {
+input[type="checkbox"]:checked + .modal {
   animation: fadeIn .8s ease-in-out forwards;
-  z-index: 999;
+  display: flex;
+}
+
+input[type="checkbox"]:checked ~ .container {
+  animation: fadeOut .8s ease-in-out forwards;
 }
 
 .modal {
+  display: none;
   position: fixed;
-  display: flex;
   align-items: center;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 0 24px #bbb;
-  opacity: 0;
   width: 480px;
   height: 560px;
+  z-index: 999;
+}
+
+@media screen and (max-width: 411px) {
+  .modal {
+    width: 85%;
+  }
 }
 
 .modal--inner {
   margin: 64px;
+}
+
+@media screen and (max-width: 411px) {
+  .modal--inner {
+    margin: 40px;
+  }
 }
 
 .modal--inner__img img {
@@ -147,13 +163,11 @@ input:checked + .modal {
 }
 
 .container {
-  position: relative;
   animation: moveCircle .8s ease-in-out infinite alternate;
   background: #efefef;
   border-radius: 90px;
   width: 180px;
   height: 180px;
-  transition: all 1s;
 }
 
 .container--inner {
@@ -228,5 +242,14 @@ input:checked + .modal {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
