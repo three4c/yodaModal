@@ -118,17 +118,17 @@ input[type="checkbox"]:checked ~ .container {
 }
 
 .modal--inner__text {
-  margin-top: 80px;
+  margin-top: 64px;
 }
 
 .modal--inner__text .name p {
   color: #333;
   font-family: yu-mincho-5go-kana;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .modal--inner__text .description {
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .modal--inner__text .description p {
