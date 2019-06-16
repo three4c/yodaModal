@@ -1,4 +1,4 @@
-# nomScript-test
+# npmScript-test
 Github Pages :  [https://three4c.github.io/npmScript-test/.](https://three4c.github.io/npmScript-test/)
 
 ## Build Setup
