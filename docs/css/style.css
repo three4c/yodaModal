@@ -100,37 +100,37 @@ input[type="checkbox"]:checked + .modal {
   }
 }
 
-.modal--inner {
+.modal__inner {
   margin: 64px;
 }
 
 @media screen and (max-width: 411px) {
-  .modal--inner {
+  .modal__inner {
     margin: 40px;
   }
 }
 
-.modal--inner__img img {
+.modal__img img {
   border-radius: 80px;
   width: 160px;
   height: 160px;
 }
 
-.modal--inner__text {
+.modal__text {
   margin-top: 64px;
 }
 
-.modal--inner__text .name p {
+.modal__text .name p {
   color: #333;
   font-family: yu-mincho-5go-kana;
   font-size: 28px;
 }
 
-.modal--inner__text .description {
+.modal__text .description {
   margin-top: 32px;
 }
 
-.modal--inner__text .description p {
+.modal__text .description p {
   font-size: 14px;
   font-weight: lighter;
   text-align: justify;
@@ -138,7 +138,7 @@ input[type="checkbox"]:checked + .modal {
   line-height: 1.8;
 }
 
-.modal--inner__text label .closeButton {
+.modal__text label .closeButton {
   cursor: pointer;
   position: absolute;
   right: -20px;
@@ -151,11 +151,11 @@ input[type="checkbox"]:checked + .modal {
   transition: all .5s;
 }
 
-.modal--inner__text label .closeButton:hover {
+.modal__text label .closeButton:hover {
   background: #be86c8;
 }
 
-.modal--inner__text label .closeButton p {
+.modal__text label .closeButton p {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -174,7 +174,7 @@ input[type="checkbox"]:checked + .modal {
   height: 180px;
 }
 
-.container--inner {
+.container__inner {
   position: absolute;
   top: 0;
   left: 0;
@@ -188,16 +188,16 @@ input[type="checkbox"]:checked + .modal {
   z-index: 1;
 }
 
-.container--inner__img {
+.container__img {
   transition: all .5s ease-in-out;
 }
 
-.container--inner__img img {
+.container__img img {
   width: 100%;
   height: 100%;
 }
 
-.container--inner__text {
+.container__text {
   opacity: 0;
   position: absolute;
   top: 0;
@@ -210,22 +210,22 @@ input[type="checkbox"]:checked + .modal {
   transition: all .5s ease-in-out;
 }
 
-.container--inner__text p {
+.container__text p {
   color: #fff;
   font-weight: bold;
   letter-spacing: 4px;
 }
 
-.container--inner label {
+.container label {
   cursor: pointer;
 }
 
-.container--inner label:hover > .container--inner__img {
+.container label:hover > .container--inner__img {
   transform: scale(1.2, 1.2);
   filter: blur(4px) brightness(40%);
 }
 
-.container--inner label:hover > .container--inner__text {
+.container label:hover > .container--inner__text {
   opacity: 1;
 }
 

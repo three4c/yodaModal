@@ -1,5 +1,5 @@
-# npmScript-test
-Github Pages :  [https://three4c.github.io/npmScript-test/.](https://three4c.github.io/npmScript-test/)
+# Yoda Modal
+Github Pages :  [https://three4c.github.io/yodaModal/.](https://three4c.github.io/yodaModal/)
 
 ## Build Setup
 ### install dependencies

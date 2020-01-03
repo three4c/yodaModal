@@ -3,16 +3,16 @@ html(lang='ja')
   head
     meta(charset='utf-8')
     link(href='./css/style.css' rel='stylesheet')
-    title npmScript-test
+    title Yoda Modal
     meta(name='viewport' content='width=device-width, initial-scale=1')
   
   body
     input(type="checkbox" name="modalPop" id="pop01")
     .modal
-      .modal--inner
-        .modal--inner__img
+      .modal__inner
+        .modal__img
           img(src="img/yoda_face.jpg")
-        .modal--inner__text
+        .modal__text
           .name
             p よだ ゆうき
           .description
@@ -21,10 +21,10 @@ html(lang='ja')
             .closeButton
               p ×
     .container
-      .container--inner
+      .container__inner
         label(for="pop01")(ontouchstart='')
-          .container--inner__img
+          .container__img
             img(src="img/yoda_face.jpg")
-          .container--inner__text
+          .container__text
                 p Open
     script(src='./js/typekit.js' type='text/javascript')
